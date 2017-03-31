@@ -1,0 +1,7 @@
+C:\Development\GitHub\fizzyo-challenge\Fizzyo-MonoGame-Example\Fizzyo-Library\obj\Debug\Fizzio-Library.dll
+C:\Development\GitHub\fizzyo-challenge\Fizzyo-MonoGame-Example\Fizzyo-Library\obj\Debug\Fizzio-Library.pdb
+C:\Development\GitHub\fizzyo-challenge\Fizzyo-MonoGame-Example\Fizzyo-Library\bin\Debug\Fizzio-Library.dll
+C:\Development\GitHub\fizzyo-challenge\Fizzyo-MonoGame-Example\Fizzyo-Library\bin\Debug\Fizzio-Library.pdb
+C:\Development\GitHub\fizzyo-challenge\Fizzyo-MonoGame-Example\Fizzyo-Library\bin\Debug\MonoGame.Framework.dll
+C:\Development\GitHub\fizzyo-challenge\Fizzyo-MonoGame-Example\Fizzyo-Library\bin\Debug\MonoGame.Framework.xml
+C:\Development\GitHub\fizzyo-challenge\Fizzyo-MonoGame-Example\Fizzyo-Library\obj\Debug\Fizzyo-Library.csprojResolveAssemblyReference.cache
