@@ -49,7 +49,7 @@ With this client, you can use the "Open in Desktop" option from GitHub
 
 ### Step 4. Create a new folder for your Game
 
-With a copy of the Games Git repositiory on your local machine, create a new folder to put your game in.
+With a copy of the Games Git repository on your local machine, create a new folder to put your game in.
 
 > DO NOT create your game at the top level of the repository or it cannot be merged.
 
