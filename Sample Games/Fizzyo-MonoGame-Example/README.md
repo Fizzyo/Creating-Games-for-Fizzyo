@@ -159,7 +159,7 @@ In relation to output of the games from Health Hack we would like to implement a
 
 ### Airway Clearance Physio Devices
 
-![Airway Clearance Devices](../Airway.jpg)
+![Airway Clearance Devices](https://github.com/Fizzyo/fizzyo.github.io/raw/master/Images/Airway.jpg)
 
 
 - We will be making available 3 x Fizzyo PEP Engineering devices to hacker for testing of game content
@@ -196,7 +196,7 @@ The MonoGame Project provides the FizzyoDevice classes in a separate PCL project
 ----
 ## Physio Routine for children
 
-![Physio Routine](../Routine.jpg)
+![Physio Routine](https://github.com/Fizzyo/fizzyo.github.io/raw/master/Images/Routine.jpg)
 
 - Treatments usually consistent of a series of ‘cycles’ – One cycle might typically include say 8-10 breaths through device (PEP & Acapella & Flutter ) as described above, followed by fewer but more forceful huffs (often not through the device- although some will huff through their PEP) and coughing as needed. The cycles are repeated until the chest feels clear. 
 
