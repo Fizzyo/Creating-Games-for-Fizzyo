@@ -31,7 +31,7 @@ namespace FizzyoMonoGame
         BreathRecogniser breathRecogniser;
         public float maxPressure = 0.4f;
         public float maxBreathLength = 3f;
-        public bool GoodBreath;
+        private bool GoodBreath = false;
 
         //Game Properties
         int retrievedFuelCells;
@@ -646,7 +646,7 @@ namespace FizzyoMonoGame
                 fizzyoButtonPressed = true;
             }
             var pressureReading = fizzyo.Pressure(); // Get the current Pressure value
-            breathRecogniser.AddSample(gameTime.ElapsedGameTime.Milliseconds, pressureReading);
+            GoodBreath = breathRecogniser.AddSample(gameTime.ElapsedGameTime.Milliseconds, pressureReading);
             if (!breathRecogniser.IsExhaling)
             {
                 GoodBreath = breathRecogniser.isLastBreathGood;

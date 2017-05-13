@@ -46,7 +46,7 @@ namespace Fizzyo_Library
             }
         }
 
-        /// Returns true if the breath was within the toterance of a 'good breath'
+        /// Was the last breath good?  value reset to false on next breath.
         public bool IsBreathGood
         {
             get
@@ -178,7 +178,7 @@ namespace Fizzyo_Library
         }
 
         /// Adds a sample to the BreathAnalyser
-        public void AddSample(float dt, float value)
+        public bool AddSample(float dt, float value)
         {
             if (this.isExhaling && value < this.minBreathThreshold)
             {
@@ -199,10 +199,12 @@ namespace Fizzyo_Library
             }
             else if (value >= this.minBreathThreshold)
             {
+                this.isBreathGood = false;
                 this.isExhaling = true;
                 this.exhaledVolume += dt * value;
                 this.breathLength += dt;
             }
+            return isBreathGood;
         }
 
         /// Returns true if the breath was within the toterance of a 'good breath'

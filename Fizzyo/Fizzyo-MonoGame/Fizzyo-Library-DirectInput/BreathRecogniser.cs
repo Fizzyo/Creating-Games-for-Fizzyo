@@ -1,7 +1,6 @@
 ﻿using System;
-namespace Fizzyo
+namespace Fizzyo_Library
 {
-    #region Exhalation Event
     /// <summary>
     /// Provides data about the current breath to the receiver when the ExhalationComplete event fires.
     /// </summary>
@@ -58,24 +57,23 @@ namespace Fizzyo
     }
 
     public delegate void ExhalationCompleteEventHandler(object sender, ExhalationCompleteEventArgs e);
-    #endregion
 
     /// <summary>
     /// Breath Analyser class decouples the logic of recognizing breaths from a stream of pressure samples
     /// from acting on the recognition.  To use:
     /// 
-    /// 1. Create an instance of BreathAnalyser: BreathAnalyser breathAnalyser = new BreathAnalyser()
-    /// 2. Set the calibration properties: MaxPressure and MaxBreathLength
-    /// 3. Register for the ExhalationCompleteEvent: breathAnalyser.ExhalationComplete += ExhalationCompleteHandler
-    /// 4. Add pressure samples in the update loop: AddSample(Time.DeltaTime, pressure)
-    /// 5. The event will fire at the end of an exhaled breath and provide information for:
+    /// 1. Create an instance of BreathAnalyser, passing in the calibration values for MaxPressure and MaxBreathLength: 
+    ///    BreathAnalyser breathAnalyser = new BreathAnalyser(MaxPressure, MaxBreathLength);
+    /// 2. Register for the ExhalationCompleteEvent: breathAnalyser.ExhalationComplete += ExhalationCompleteHandler
+    /// 3. Add pressure samples in the update loop: AddSample(Time.DeltaTime, pressure);
+    /// 4. The event will fire at the end of an exhaled breath and provide information for:
     /// 
     ///    a) BreathLength
     ///    b) BreathCount
     ///    c) ExhaledVolume
     ///    d) IsBreathGood
     /// 
-    /// 6. You can interrogate the breath analyser at any time to determine:
+    /// 5. You can interrogate the breath analyser at any time to determine:
     /// 
     ///    a) BreathLength
     ///    b) BreathCount
@@ -96,9 +94,11 @@ namespace Fizzyo
         private float maxPressure = 0;
         private float maxBreathLength = 0;
         private const float kTollerance = 0.80f;
-        private float minBreathThreshold = .05f;
+        private float minBreathThreshold = .2f;
+        private bool isBreathGood;
 
         public event ExhalationCompleteEventHandler ExhalationComplete;
+
 
         public BreathRecogniser(float MaxPressure, float MaxBreathLength)
         {
@@ -155,6 +155,7 @@ namespace Fizzyo
             }
         }
 
+
         /// The maximum breath length recorded during calibration
         public float MaxBreathLength
         {
@@ -168,7 +169,6 @@ namespace Fizzyo
             }
         }
 
-        /// Was the last breath good?  value reset to false on next breath.
         public bool isLastBreathGood
         {
             get
@@ -183,12 +183,12 @@ namespace Fizzyo
             if (this.isExhaling && value < this.minBreathThreshold)
             {
                 // Notify the delegate that the exhaled breath is complete
-                this.isBreathGood = this.IsBreathGood(this.breathLength, this.maxBreathLength, this.exhaledVolume, this.maxPressure);
+                isBreathGood = this.IsBreathGood(this.breathLength, this.maxBreathLength, this.exhaledVolume, this.maxPressure);
                 ExhalationCompleteEventArgs eventArgs = new ExhalationCompleteEventArgs(
                     this.breathLength,
                     this.breathCount,
                     this.exhaledVolume,
-                    this.isBreathGood);
+                    isBreathGood);
                 this.OnExhalationComplete(this, eventArgs);
 
                 // Reset the state

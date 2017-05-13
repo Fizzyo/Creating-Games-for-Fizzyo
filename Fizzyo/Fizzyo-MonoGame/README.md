@@ -7,6 +7,9 @@ If you are a game developer it’s as easy as 1-2-3.
 
 The Fizzyo device appears as a Joystick on the computer, so you simply need to have your game interpret joystick inputs.
 
+> For testing with a physical Fizyo device, you will need to use the alternate "Fizzyo-Library-DirectInput" library due to an XInput patch that is required with the Fizzyo firmware.
+> Once this is fixed, the alternate project will be deprecated.
+
 ----
 ## We allow for 2 types of inputs:
 
