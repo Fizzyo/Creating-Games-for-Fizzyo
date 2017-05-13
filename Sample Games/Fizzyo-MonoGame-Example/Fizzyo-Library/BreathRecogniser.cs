@@ -95,6 +95,7 @@ namespace Fizzyo_Library
         private float maxBreathLength = 0;
         private const float kTollerance = 0.80f;
         private float minBreathThreshold = .2f;
+        private bool isBreathGood;
 
         public event ExhalationCompleteEventHandler ExhalationComplete;
 
@@ -168,13 +169,21 @@ namespace Fizzyo_Library
             }
         }
 
+        public bool isLastBreathGood
+        {
+            get
+            {
+                return this.isBreathGood;
+            }
+        }
+
         /// Adds a sample to the BreathAnalyser
         public void AddSample(float dt, float value)
         {
             if (this.isExhaling && value < this.minBreathThreshold)
             {
                 // Notify the delegate that the exhaled breath is complete
-                bool isBreathGood = this.IsBreathGood(this.breathLength, this.maxBreathLength, this.exhaledVolume, this.maxPressure);
+                isBreathGood = this.IsBreathGood(this.breathLength, this.maxBreathLength, this.exhaledVolume, this.maxPressure);
                 ExhalationCompleteEventArgs eventArgs = new ExhalationCompleteEventArgs(
                     this.breathLength,
                     this.breathCount,
