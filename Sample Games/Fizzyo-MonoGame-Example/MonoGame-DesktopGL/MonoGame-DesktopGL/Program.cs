@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MonoGame_DesktopGL
+namespace FizzyoMonoGame
 {
     /// <summary>
     /// The main class.

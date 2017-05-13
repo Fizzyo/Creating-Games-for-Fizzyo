@@ -30,11 +30,14 @@ namespace Fizzyo_Library
 
         public KeyboardState CurrentKeyboardState;
         public readonly GamePadState[] CurrentGamePadStates;
+        public readonly GamePadState[] CurrentFizzyoStates;
 
         public KeyboardState LastKeyboardState;
         public readonly GamePadState[] LastGamePadStates;
+        public readonly GamePadState[] LastFizzyoStates;
 
         public readonly bool[] GamePadWasConnected;
+        public readonly bool[] FizzyoWasConnected;
 
         public bool GamePadsAvailable = false;
 
@@ -54,15 +57,14 @@ namespace Fizzyo_Library
         {
             CurrentKeyboardState = new KeyboardState();
             CurrentGamePadStates = new GamePadState[MaxGamePadInputs];
-            for (int i = 0; i < MaxGamePadInputs; i++)
-            {
-                GamePad.GetCapabilities(i);
-            }
+            CurrentFizzyoStates = new GamePadState[MaxGamePadInputs];
 
             LastKeyboardState = new KeyboardState();
             LastGamePadStates = new GamePadState[MaxGamePadInputs];
+            LastFizzyoStates = new GamePadState[MaxGamePadInputs];
 
             GamePadWasConnected = new bool[MaxGamePadInputs];
+            FizzyoWasConnected = new bool[MaxGamePadInputs];
         }
 
 
@@ -79,8 +81,10 @@ namespace Fizzyo_Library
             for (int i = 0; i < MaxGamePadInputs; i++)
             {
                 LastGamePadStates[i] = CurrentGamePadStates[i];
+                LastFizzyoStates[i] = CurrentFizzyoStates[i];
 
                 CurrentGamePadStates[i] = GamePad.GetState((PlayerIndex)i);
+                CurrentFizzyoStates[i] = FizzyoInput.GetState((PlayerIndex)i);
 
                 GamePadsAvailable = false;
 
@@ -90,6 +94,11 @@ namespace Fizzyo_Library
                 {
                     GamePadsAvailable = true;
                     GamePadWasConnected[i] = true;
+                }
+                if (CurrentFizzyoStates[i].IsConnected)
+                {
+                    GamePadsAvailable = true;
+                    FizzyoWasConnected[i] = true;
                 }
             }
 
@@ -194,7 +203,7 @@ namespace Fizzyo_Library
 
                 int i = (int)playerIndex;
 
-                return CurrentGamePadStates[i].IsButtonDown(button);
+                return CurrentGamePadStates[i].IsButtonDown(button) || CurrentFizzyoStates[i].IsButtonDown(button);
             }
             else
             {
@@ -235,7 +244,7 @@ namespace Fizzyo_Library
 
                 int i = (int)playerIndex;
 
-                return CurrentGamePadStates[i].ThumbSticks.Left;
+                return CurrentGamePadStates[i].ThumbSticks.Left + CurrentFizzyoStates[i].ThumbSticks.Left;
             }
             else
             {
@@ -245,6 +254,11 @@ namespace Fizzyo_Library
                     {
                         playerIndex = (PlayerIndex)i;
                         return CurrentGamePadStates[i].ThumbSticks.Left;
+                    }
+                    if (CurrentFizzyoStates[i].IsConnected)
+                    {
+                        playerIndex = (PlayerIndex)i;
+                        return CurrentFizzyoStates[i].ThumbSticks.Left;
                     }
                 }
                 playerIndex = PlayerIndex.One;

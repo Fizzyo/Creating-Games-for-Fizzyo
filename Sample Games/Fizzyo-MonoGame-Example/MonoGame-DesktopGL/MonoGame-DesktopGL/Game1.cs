@@ -1,4 +1,5 @@
-﻿using Fizzyo_Library;
+﻿
+using Fizzyo_Library;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
-namespace MonoGame_DesktopGL
+namespace FizzyoMonoGame
 {
     /// <summary>
     /// This is the main type for your game.
@@ -16,7 +17,7 @@ namespace MonoGame_DesktopGL
     {
         public enum GameState { Loading, Running, Won, Lost }
 
-
+        JoystickState joyState;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -30,6 +31,7 @@ namespace MonoGame_DesktopGL
         BreathRecogniser breathRecogniser;
         public float maxPressure = 0.4f;
         public float maxBreathLength = 3f;
+        public bool GoodBreath;
 
         //Game Properties
         int retrievedFuelCells;
@@ -79,13 +81,15 @@ namespace MonoGame_DesktopGL
 
             //Initialise fizzyo Service
             fizzyo = new FizzyoDevice(this);
-            fizzyo.useRecordedData = true; // Change this value to use actual values instead of recorded data
+            fizzyo.useRecordedData = false; ; // Change this value to use actual values instead of recorded data
             Services.AddService(typeof(FizzyoDevice), fizzyo);
 
             breathRecogniser = new BreathRecogniser(maxPressure, maxBreathLength);
             
             roundTime = GameConstants.RoundTime;
             random = new Random();
+
+            joyState = new JoystickState();
         }
 
         /// <summary>
@@ -277,6 +281,7 @@ namespace MonoGame_DesktopGL
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            joyState = Joystick.GetState(0);
             fizzyo.Update(gameTime);
             inputState.Update(gameTime);
             PlayerIndex playerIndex = PlayerIndex.One;
@@ -610,6 +615,8 @@ namespace MonoGame_DesktopGL
             spriteBatch.DrawString(statsFont, "Output Pressure is: [" + pressurevalue + "]", strPosition, Color.White);
             strPosition.Y += strSize.Y;
             spriteBatch.DrawString(statsFont, "CanMove [" + CanMove + "]", strPosition, Color.White);
+            strPosition.Y += strSize.Y;
+            spriteBatch.DrawString(statsFont, "GoodBreath [" + GoodBreath + "]", strPosition, Color.White);
 
             spriteBatch.Draw(blankTexture, pressureRectBar, Color.White);
             spriteBatch.Draw(blankTexture, pressureBar, Color.Green);
@@ -639,7 +646,11 @@ namespace MonoGame_DesktopGL
                 fizzyoButtonPressed = true;
             }
             var pressureReading = fizzyo.Pressure(); // Get the current Pressure value
-            breathRecogniser.AddSample(gameTime.ElapsedGameTime.Seconds, pressureReading);
+            breathRecogniser.AddSample(gameTime.ElapsedGameTime.Milliseconds, pressureReading);
+            if (!breathRecogniser.IsExhaling)
+            {
+                GoodBreath = breathRecogniser.isLastBreathGood;
+            }
             pressurevalue = pressureReading;
         }
 
