@@ -1,0 +1,10 @@
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\Fizzyo-Library-DirectInput.dll
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\Fizzyo-Library-DirectInput.pdb
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\MonoGame.Framework.dll
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\SharpDX.DirectInput.dll
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\SharpDX.dll
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\MonoGame.Framework.xml
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\SharpDX.xml
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\bin\Debug\SharpDX.DirectInput.xml
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\obj\Debug\Fizzyo-Library-DirectInput.dll
+C:\Development\GitHub\FizzyoGames\Sample Games\Fizzyo-MonoGame-Example\Fizzyo-Library-DirectInput\obj\Debug\Fizzyo-Library-DirectInput.pdb
