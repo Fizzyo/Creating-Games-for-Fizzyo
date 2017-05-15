@@ -51,7 +51,8 @@ public class Player : MonoBehaviour {
         {
             var pos = transform.position;
             pos.y += 0.5f;
-            GameObject missile = (GameObject)Instantiate(missilePrefab, pos, transform.rotation);
+            //GameObject missile = (GameObject)Instantiate(missilePrefab, pos, transform.rotation);
+            Instantiate(missilePrefab, pos, transform.rotation);
         }
     }
 
