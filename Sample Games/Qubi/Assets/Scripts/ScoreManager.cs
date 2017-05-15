@@ -40,7 +40,9 @@ public class ScoreManager : MonoBehaviour
     public AudioSource BadBreathSound;
     public AudioSource LevelEndSound;
     public AudioSource GameEndSound;
-    private AudioSource CoinEffect;
+    public AudioSource CoinEffect;
+
+    public AudioSource BackgroundMenuMusic;
 
     // Save keys
     private string sessionBreathCountKey = "BreathsCount";
@@ -53,6 +55,9 @@ public class ScoreManager : MonoBehaviour
     public event LevelResetEventHandler LevelEndEvent;
     public event LevelResetEventHandler GameEndEvent;
 
+    //In Game background music manager
+    public BackgroundMusicManager backgroundMusicManager;
+
     // First thing to be called
     private void Awake()
     {
@@ -64,12 +69,11 @@ public class ScoreManager : MonoBehaviour
     {
         LoadPlayerPrefs();
 
-        CoinEffect = this.GetComponent<AudioSource>();
-
         LevelSetupUI.SetActive(true);
         HUD.SetActive(false);
         LevelEndUI.SetActive(false);
         GameEndUI.SetActive(false);
+        StartCoroutine(AudioFader.FadeIn(BackgroundMenuMusic, 5f));
     }
 
     #region SaveLoad
@@ -133,6 +137,11 @@ public class ScoreManager : MonoBehaviour
         GoodBreathSound.Play();
 
         CurrentLevel.GoodBreathCount++;
+
+        if (CurrentLevel.GoodBreathCount % 2 == 0)
+        {
+            backgroundMusicManager.PlayNextLevel(CurrentLevel.GoodBreathCount / 2);
+        }
 
         GameObject particles = Instantiate(GoodBreathParticles);
         particles.transform.position = Player.transform.GetChild(0).position;
@@ -231,6 +240,12 @@ public class ScoreManager : MonoBehaviour
     {
         currentStage = GameStage.LevelPlaying;
 
+        if (BackgroundMenuMusic.isPlaying)
+        {
+            StartCoroutine(AudioFader.FadeOut(BackgroundMenuMusic, 0.5f));
+        }
+        backgroundMusicManager.StartBackgroundMusic();
+
         if (LevelStartEvent != null)
             LevelStartEvent();
 
@@ -287,6 +302,8 @@ public class ScoreManager : MonoBehaviour
 
         GameEndSound.Stop();
         GameEndSound.Play();
+
+        backgroundMusicManager.StopBackgroundMusic();
     }
 
     public void CreateLevelEnd()
