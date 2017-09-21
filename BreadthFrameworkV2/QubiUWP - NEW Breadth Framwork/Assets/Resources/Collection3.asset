@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eba3a44286ee9149994ba55d5e13665, type: 3}
+  m_Name: Collection3
+  m_EditorClassIdentifier: 
+  BackgroundMusic:
+  - {fileID: 8300000, guid: d10e29b8f3109df4d95462096d29272c, type: 3}
+  - {fileID: 8300000, guid: 4220c3e1f2183ec44acff77ce06283f9, type: 3}
+  - {fileID: 8300000, guid: dd2e1b60dc9411a46985222fa710e557, type: 3}
+  - {fileID: 8300000, guid: 86481cbcc0861e34ab3f6d689a05bdfd, type: 3}
