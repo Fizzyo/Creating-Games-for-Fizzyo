@@ -1,7 +1,3 @@
-# CSE Hack Week Challenge
-
-# Test and Refine Fizzyo Breadth Framework V2 
-
 ## System Overview
 
 	The goal of the system was to provide a breath framework that could be incorporated into any 
@@ -25,19 +21,7 @@
 
 	The front end of the system takes the form of Unity scenes which are collections of game objects that provide a user interface. The back end of the system takes the form of various C# scripts containing classes and methods which can be utilised by the games developer to integrate the system with their game. The system also utilises access to a web API which is used for uploading and loading user data. This API was created alongside the system as a separate project.
 
-	The framework was created within the game “Qubi”, which was made in Unity for the Fizzyo system prior to the projects initiation. Table 3 contains an overview of all of the system component assets that were created, modified or required for the system to function. Further details of each asset can be found in section 4.2 of this report.
-
-	Please Refer to Table 1 and Figure 1 on page 2 of the System Description Manual for an overview of the systems components and a visualisation of the system.
-
-	Key Features of the system include (For more details please refer to the Systems Description
-	and Manual PDF file):
-		- Database Integration 
-		- Loading of User Data
-		- Achievements
-		- Leader boards
-		- Session Data
-		- Calibration
-		- Breath Recognition
+	The framework was created within the game “Qubi”, which was made in Unity for the Fizzyo system prior to the projects initiation. 
 		
 ## Database Integration
 
@@ -45,13 +29,9 @@
 	
 	Details of the Fizzyo API can be found at: https://api.fizzyo-ucl.co.uk/#api-v1_Authv1_auth_token.
 	
-	Currently the system uses a built-in username and password (hardcoded into the Fizzyo.cs class) for a test user to load and upload data. In the future the data should be transferred using an
-	account associated with the current users Windows Live account. An endpoint exists for receiving an access token using Windows Live login details but this system currently doesn’t utilise it. This could be solved in two ways: the Windows Live access token could be sent to the game by the hub application using app to app technology or the game could incorporate a Windows Live login screen of its own. The former solution being preferable as it means the user only has to log in once.
+	Currently the system uses a built-in username and password (hardcoded into the Fizzyo.cs class) for a test user to load and upload data. In the future the data should be transferred using an	account associated with the current users Windows Live account. An endpoint exists for receiving an access token using Windows Live login details but this system currently doesn’t utilise it. This could be solved in two ways: the Windows Live access token could be sent to the game by the hub application using app to app technology or the game could incorporate a Windows Live login screen of its own. The former solution being preferable as it means the user only has to log in once.
 	
 ## Loading of User Data
-	
-	Please Refer to Figure 3 on page 6 of the System Description Manual for the class diagram that
-	describes the initial data loading system.
 	
 	Loading of user data within the system occurs when the user starts the game. The functionality for this user data load is encapsulated in the “Load” Class. This is a public class and its methods can be accessed by using the namespace Fizzyo.Data. To perform the initial load the game calls the LoadUserData method in the InitialDataLoad class,passing it the games ID string and the game secret. These parameters are given to developers when their game is added to the system, they are required to input these into the InitialDataLoad class when implementing the framework. The various user data, if the user is online, is then loaded from the API into the games player preferences. Player	preferences in Unity are used to store and access player details between game sessions.
 
@@ -69,9 +49,7 @@
 	The loading of user data is then complete. If the user is playing offline or has not yet uploaded calibration data then they are automatically taken to the calibration screen. If calibration data was loaded in then the user goes straight to the main menu, where they can start playing immediately.
 	
 ## Achievements
-	
-	Please Refer to Figures 8 and 10 on pages 11 and 13 of the System Description Manual for the class diagrams that describe the achievement system.
-	
+		
 	For the frameworks achievement system to function in a specific game, the developer must perform two actions:
 	- Submit achievement details to the Fizzyo database developer. These can then be added to the database and each achievement can be given a unique ID. Details to add to the database are the achievement title, description, points and gameID
 	- Include full details of each achievement, including the ID given above, in JSON format within the Achievements.json file within the Streaming Assets folder. A detailed description and example of the data that must be included can be found in the System	Description and Manual PDF file.
@@ -95,23 +73,15 @@
 	
 ## Leaderboards
 
-	Please Refer to Figures 12 and 13 on pages 15 and 16 of the System Description Manual for 
-	the class diagrams that describe the leader board system.
-	
 	The score that a user gets when they have finished a session is uploaded via the FizzyoOverlay.cs script. At the point where a session is finished in the game script, the LeaderBoard method is called using the score that was attained as a parameter. This score is then uploaded via the Score method within the Upload class contained in Fizzyo.cs in the Fizzyo.Upload namespace. A notification is shown onscreen which states if the upload was complete or if it failed.
 	
 	The top 20 scores that have been uploaded by players can be viewed in the Leader boards scene. The LeaderboardManager class utilises the GetHighScores method in the Load class of the Fizzyo.Data namespace which returns the high scores as a JSON formatted string. These high scores are then displayed with their position, name and score in the scene.
 	
 ## SessionData
 
-	Please Refer to Figure 15 on page 16 of the System Description Manual for the class diagram that describes the session data upload system.
-
 	The framework is designed to gather and hold session data as the game is played in an instance of the Session class. The Session class is held within the Fizzyo namespace and contains methods for constructing and uploading a session. When a session is constructed the breath count and set count for the session are set, the start time is also saved. When a session is uploaded the amount of good breaths, bad breaths and score	are set, the end time is also found by the class. The class then uses the Session method in the Upload class to submit this information to the database. The Session method also uploads unlocked achievements and saves achievement progress, so a session must be	completed for achievement data to be saved. Once the session has finished uploading, a string is returned containing the status of the upload. This can then be used by the ShowSession method in the FizzyoOverlay to display a notification in game.
 		
 ## Calibration
-
-	Please Refer to Figure 17 on page 18 of the System Description Manual for the class diagram
-	that describes the calibration system.
 
 	A class is used to represent a calibration session. This class is held in the Fizzyo namespace.
 	It holds all of the data for a given calibration and the Calibrate method which is called
@@ -129,11 +99,7 @@
 	
 ## Breath Recognition
 
-	Please Refer to Figure 19 on page 20 of the System Description Manual for the class diagram
-	that describes the calibration system.
-
-	The breath recogniser for the system has been included in the Fizzyo namespace and
-	modified to include the following features:
+	The breath recogniser for the system has been included in the Fizzyo namespace and modified to include the following features:
 	- Calibration data is now used to define a target pressure and breath length that the
 	system uses to judge the quality of a completed breath
 	- A breathPercentage variable has been added to the BreathRecogniser class which can be used to communicate to the user how far though a target breath they are	or how good the breath they have completed was. An example of this variable being used can be observed in Qubi. The outer bar that fills up on the maincharacter uses this percentage value to show the user their breath progression
@@ -201,8 +167,6 @@
 
 ## Adding the Framework to a New Game
 
-	The files that need to be added to a game to incorporate the system are included in the Required Fizzyo Files folder. An overview of these components can be found in Table 1 on page 2 of the System Description.
-	
 	All scenes are self contained and complete except for MapTest. The game objects in MapTest (FizzyoOverlay,	AchUnlock and LeadUnlock) are intended to be included in the main game scene of any game that is created for the system. These objects and their associated scripts, as described in the earlier sections of this readme file, are used to progress/unlock achievements, gather session data and upload data at the end of a session.
 	
 	For the frameworks achievement system to function in a specific game, the developer
