@@ -6,7 +6,7 @@ All Games should based on the technical requirements as listed in https://github
 
 We offer two frameworks at present to build Fizzyo based games
 
-- [Unity3d](https://github.com/Fizzyo/fizzyo-challenge/tree/master/Fizzyo-Unity-Example)
+- [Unity3d](https://github.com/Fizzyo/FizzyoFramework-Unity)
 
 - [MonoGame](https://github.com/Fizzyo/fizzyo-challenge/tree/master/Fizzyo-MonoGame-Example)
 
