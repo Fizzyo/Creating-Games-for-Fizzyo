@@ -114,6 +114,9 @@ Ski Racer Get your skier down the Mountain through the salom gates watch out for
 
 AstroYoyage - Dodge the astroriods https://github.com/Fizzyo/AstroVoyageGame
 
+FuelCell - Example of the game library https://github.com/Fizzyo/FuelCellGame
+
+
 SolarExplorer - Fly your space craft through the solar system https://github.com/Fizzyo/SolarExplorerGame
 
 Monster Hero Battle- Take on Monster use your breadth to defeat the monster and fizzyo device button to time your attack https://github.com/Fizzyo/MonsterHeroBattle
