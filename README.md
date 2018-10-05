@@ -25,6 +25,9 @@ Full documentation for each Engine/Framework are included with the Fizzyo compon
 
 Once you have your game ready, just submit a Pull Request (PR) using the instructions below.
 
+## How to design games for children
+These principles create a common language that describes how to make great digital experiences for children. They talk about the tricky details that can sometimes be difficult to pinpoint or articulate when they’re missing.  http://www.bbc.co.uk/gel/guidelines/how-to-design-for-children you can also get a selection of audio assets from http://bbcsfx.acropolis.org.uk/
+
 ## Building Games for the Fizzyo project
 
 ### Step 1. Register on Github
