@@ -60,6 +60,54 @@ You have your folder on your local machine, complete with a default ReadMe file,
 Once you are ready to submit your game to the Main Fizzyo Games Repo, be sure to update your ReadMe to tell people about your game (include screenshots / gifs if you can).  
 The ReadMe is written in Markdown which is a very easy to use format, for tips / tricks and formatting just see [this guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) (or check out the other ReadMe's on the site)
 
+
+## Creating a Game for Fizzyo
+
+### Registering your game 
+
+You first need to recieve and invitaion code from the Project Fizzyo team - please contact Tim Kuzhagaliyev at tim.kuzhagaliyev.15 (at) ucl.ac.uk
+
+Then you need to register at http://fizzyo-ucl.co.uk 
+
+Input your code here and register with tour Microsoft Services Account
+
+### Loggin in 
+
+Once you have registered click login and you will be asked for Microsoft Service Account which you used at the registration
+
+### The Games Dashboard
+
+You will see your games dashboard (which will be initally emppty)
+You can see, add, edit and delete games or log out 
+
+### Adding Games 
+
+Clicking NEW prompts for a new windows to pop up, with the option of adding your new games details
+Fields cannot be left Empty
+- Game Name
+- Game Version
+- Unity Version
+
+### Editing Games
+
+Double click a editable field this will and edit windows to pop up
+
+### Adding Achievements or Hight Scores
+
+Go to Game Achievements or High Scores, Click the relevant button
+To go back to the game dashboard or to the high scores click on the relevant button
+The Achievement Dashboard - All actions performed on games can be preformed on achievements
+The High Score Dashboard - At the moment you can only view the top 20 scores in your game there 
+
+### Deleting Games
+
+Select the games you want to delete and press delete
+Be suire you have selected the right game and confirm
+
+
+
+
+
 ## Contributing Games to this GitHub
 
 Once you are ready and want to submit your game to the Fizzyo Game project, there are a few steps to do this.  To list your game on the Fizzyo Games site, you need to publish it as a SubModule (for more details about Submodules, [see here](https://github.com/blog/2104-working-with-submodules))
