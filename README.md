@@ -103,3 +103,23 @@ When you have your games built and ready you can push the code back to the main 
 ## Troubleshooting 
 
 If you are having any trouble with the above, simply reach out to any of the Fizzyo team on GitHub.  For details on the team, simply click on the "Contributors" tab on the GitHub website.
+
+## Games for Fizzyo
+
+EggToss- A doddle jump inspired game where you need to take your egg on the hope up the cloudsusing your fizzyo device https://github.com/Fizzyo/EggTossGame
+
+Qubi Game - Endless runner using your breadth to power up Qubi to give a super boost to compelete the level https://github.com/Fizzyo/QubiGame
+
+Ski Racer Get your skier down the Mountain through the salom gates watch out for the avalance https://github.com/Fizzyo/SkiRacerGame
+
+AstroYoyage - Dodge the astroriods https://github.com/Fizzyo/AstroVoyageGame
+
+SolarExplorer - Fly your space craft through the solar system https://github.com/Fizzyo/SolarExplorerGame
+
+Monster Hero Battle- Take on Monster use your breadth to defeat the monster and fizzyo device button to time your attack https://github.com/Fizzyo/MonsterHeroBattle
+
+Fizzyo Book Reader - Read and book and use your beathe to turn the pages of short open source books https://github.com/Fizzyo/FizzyoBookReaderGame 
+
+Fisyyo - Go fishing with your fizzyo device and see how many fish you can catch with a rod and line https://github.com/Fizzyo/FisyyoGame
+
+Supershooter - Take on emeny and collect coins in combat with an AI https://github.com/Fizzyo/SuperShooterGame
