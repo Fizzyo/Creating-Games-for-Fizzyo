@@ -71,7 +71,7 @@ Then you need to register at http://fizzyo-ucl.co.uk
 
 Input your code here and register with tour Microsoft Services Account
 
-### Loggin in 
+### Logging in 
 
 Once you have registered click login and you will be asked for Microsoft Service Account which you used at the registration
 
@@ -103,10 +103,6 @@ The High Score Dashboard - At the moment you can only view the top 20 scores in 
 
 Select the games you want to delete and press delete
 Be suire you have selected the right game and confirm
-
-
-
-
 
 ## Contributing Games to this GitHub
 
@@ -163,7 +159,6 @@ Ski Racer Get your skier down the Mountain through the salom gates watch out for
 AstroYoyage - Dodge the astroriods https://github.com/Fizzyo/AstroVoyageGame
 
 FuelCell - Example of the game library https://github.com/Fizzyo/FuelCellGame
-
 
 SolarExplorer - Fly your space craft through the solar system https://github.com/Fizzyo/SolarExplorerGame
 
