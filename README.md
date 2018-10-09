@@ -8,7 +8,7 @@ We offer two frameworks at present to build Fizzyo based games
 
 - [Unity3d](https://github.com/Fizzyo/FizzyoFramework-Unity)
 
-- [MonoGame](https://github.com/Fizzyo/fizzyo-challenge/tree/master/Fizzyo-MonoGame-Example)
+- [MonoGame](https://github.com/Fizzyo/Creating-Games-for-Fizzyo/tree/master/Fizzyo/Fizzyo-MonoGame)
 
 > If you wish to add support for more engines / frameworks, then simply create / reuse the Fizzyo library, update it for that type and submit it back to the project.
 > There are no restrictions on which engine you use, only that it is able to connect to the Fizzyo device using the Game Inputs
@@ -133,7 +133,7 @@ It is recommended you name the SubModule using your **Game Name** and your **GIT
 > For more details about Submodules, check the GitHub [Documentation Here]() or check the help for your Git client.
 
 
-2. Edit the [Games Projects](https://github.com/Fizzyo/Games/blob/master/Games_Projects.md) file in the Fizzyo Games projects root folder and add an entry for your game. It should include the Name and the Http link to your repository.  The Fizzyo team will then create the submodule link for you.  
+2. Edit the [Games Projects](https://github.com/Fizzyo/Creating-Games-for-Fizzyo/tree/master/Games_Projects.md) file in the Fizzyo Games projects root folder and add an entry for your game. It should include the Name and the Http link to your repository.  The Fizzyo team will then create the submodule link for you.  
 It should look as follows (including the | characters):
 
 My Game | ddreaper | https://GitHub/MyGame/Here
@@ -153,6 +153,8 @@ If you are having any trouble with the above, simply reach out to any of the Fiz
 EggToss- A doddle jump inspired game where you need to take your egg on the hope up the cloudsusing your fizzyo device https://github.com/Fizzyo/EggTossGame
 
 Qubi Game - Endless runner using your breadth to power up Qubi to give a super boost to compelete the level https://github.com/Fizzyo/QubiGame
+
+Fishyo - Go fishing with your fizzyo device https://github.com/Fizzyo/Fishyo2Game
 
 Ski Racer Get your skier down the Mountain through the salom gates watch out for the avalance https://github.com/Fizzyo/SkiRacerGame
 
