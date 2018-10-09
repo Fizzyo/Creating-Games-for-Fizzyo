@@ -132,7 +132,24 @@ Fizzyo.FizzyoDevice.Instance().Pressure();
 Fizzyo.FizzyoDevice.Instance().ButtonDown();
 
 ```
+## Building your game for Windows 10 
 
+At present Unity doesnt allows you to specific VID & PID's so to you need to have to manuually add the following to Package.appxmanifest after exporting to ensure the game will support the Fizzyo Device. See https://docs.microsoft.com/en-gb/windows/uwp/packaging/packaging-uwp-apps
+
+
+```
+<Capabilities> 
+<Capability Name="internetClient" /> 
+<uap:Capability Name="userAccountInformation" /> 
+<DeviceCapability Name="bluetooth" /> 
+<DeviceCapability Name="humaninterfacedevice"> 
+<Device Id="any"> 
+<Function Type="usage:0001 0004" /> 
+<Function Type="usage:0001 0005" /> 
+</Device> 
+</DeviceCapability> 
+</Capabilities> 
+```
 ## Contributing Games to this GitHub
 
 Once you are ready and want to submit your game to the Fizzyo Game project, there are a few steps to do this.  To list your game on the Fizzyo Games site, you need to publish it as a SubModule (for more details about Submodules, [see here](https://github.com/blog/2104-working-with-submodules))
