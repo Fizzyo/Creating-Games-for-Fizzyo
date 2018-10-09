@@ -104,6 +104,35 @@ The High Score Dashboard - At the moment you can only view the top 20 scores in 
 Select the games you want to delete and press delete
 Be suire you have selected the right game and confirm
 
+### Testing your game ###
+
+
+## Testing your game 
+
+This example https://github.com/Fizzyo/Creating-Games-for-Fizzyo/tree/master/Sample%20Games/Fizzyo-Unity-Example includes a test harness and test data that allows you to load and playback breath data saved from a fizzyo device. There is a selection of good and bad breadths available at https://github.com/Fizzyo/Creating-Games-for-Fizzyo/tree/master/Sample%20Games/Fizzyo-Unity-Example/Assets/Data 
+
+To use this a singleton class is provided FizzyoDevice.Instance() that can be used at any point in your code if FizzyoDevice.cs is present in your project.
+
+By default FizzyoDevice plays back pre-recorded data but can also be used to gather data directly from the device if the bool useRecordedData is set to false.
+This can be done through the editor or programmatically in your code.
+
+This allows you to program your game completely against pre-recoreded pressure values if desired and switched over to live values at a later stage.
+
+```
+FizzyoDevice.cs
+
+/* (float) Return the current pressure value, either from the device or streamed from a log file.
+*   range: -1.0f - 1.0f
+*   comment: if useRecordedData is set pressure data is streamed from the specified data file instead of the device.
+*/
+Fizzyo.FizzyoDevice.Instance().Pressure();
+
+
+/* (bool) Return if the fizzyo device button is pressed */
+Fizzyo.FizzyoDevice.Instance().ButtonDown();
+
+```
+
 ## Contributing Games to this GitHub
 
 Once you are ready and want to submit your game to the Fizzyo Game project, there are a few steps to do this.  To list your game on the Fizzyo Games site, you need to publish it as a SubModule (for more details about Submodules, [see here](https://github.com/blog/2104-working-with-submodules))
