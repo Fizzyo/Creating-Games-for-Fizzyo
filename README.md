@@ -136,6 +136,10 @@ Fizzyo.FizzyoDevice.Instance().ButtonDown();
 
 At present Unity doesnt allows you to specific VID & PID's so to you need to have to manuually add the following to Package.appxmanifest after exporting to ensure the game will support the Fizzyo Device. See https://docs.microsoft.com/en-gb/windows/uwp/packaging/packaging-uwp-apps and https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations 
 
+### Adding Capabilities to your app manifest
+
+https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest
+
 
 ```
 <Capabilities> 
