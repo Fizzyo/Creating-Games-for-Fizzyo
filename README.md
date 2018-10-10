@@ -138,8 +138,12 @@ At present Unity doesnt allows you to specific VID & PID's so to you need to hav
 
 ### Adding Capabilities to your app manifest
 
-https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest
+to Dedit the package.manifest you simply have to right-click on the "Package.appxmanifest" and click "View Code" to see the xml
 
+Then manually update the capabilities section if your interested in available capabilities see https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest
+
+
+### Capabilities which need to be added to support Fizzyo Device 
 
 ```
 <Capabilities> 
