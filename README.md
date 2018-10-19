@@ -38,8 +38,7 @@ You first needed to sign up for an account. Github has a range of accounts but a
 ### Step 2. Create a new project (don't forget the gitIgnore)
 
 Create yourself a new GIT project for your game on GitHub, full instructions can be found here ([Setting up a Repo](https://help.github.com/articles/create-a-repo/)) for getting started.
-Remember to select the .gitIgnore definition for your project, ESPECIALLY if it is a Unity project.  
-If in doubt, just select C#
+Remember to select the Unity .gitIgnore definition for your project, ESPECIALLY if it is a Unity project.  
 
 ### Step 3. Clone your project to your machine
 
@@ -162,11 +161,11 @@ Then manually update the capabilities section if your interested in available ca
 
 ```
 
-## Contributing Games to this GitHub
+## Contributing Games back to the Fizzyo GitHub Repo
 
 Once you are ready and want to submit your game to the Fizzyo Game project, there are a few steps to do this.  To list your game on the Fizzyo Games site, you need to contact us to have your source code published at <http://github.com/fizzyo> When you develop a game for Fizzyo, you first need to recieve and invitaion code from the Project Fizzyo team. When your ready to share your game please contact Tim Kuzhagaliyev at tim.kuzhagaliyev.15 (at) ucl.ac.uk and share the github link for your source control
 
-## Sharing Unity Source Code
+## Unity Source Code & Github
 
 Enable External option in Unity → Preferences → Packages → Repository
 Switch to Hidden Meta Files in Editor → Project Settings → Editor → Version Control Mode
