@@ -7,7 +7,7 @@ If you are a game developer it’s as easy as 1-2-3.
 
 The Fizzyo device appears as a Joystick on the computer, so you simply need to have your game interpret joystick inputs.
 
-----;
+----
 
 ## Available Frameworks
 
@@ -23,13 +23,13 @@ Monogame is minimally supported
 
 Full instructions are included for each engine / framework use of the components
 
-----;
+----
 
 ## Contributions
 
 If you have another framework / engine in mind that the current classes do not cover, then by all means submit a PR to this project (using the same style) for the new platform
 
-----;
+----
 
 ## Active Development
 
